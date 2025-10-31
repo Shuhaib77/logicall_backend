@@ -27,4 +27,6 @@ exports.pool = promise_1.default.createPool({
     waitForConnections: true,
     connectionLimit: 10,
     namedPlaceholders: true,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 0,
 });
