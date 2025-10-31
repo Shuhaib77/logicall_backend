@@ -10,6 +10,7 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const secretKey = process.env.SECRET_KEY || "your_secret_key";
+//register service
 const registerService = async (payload) => {
     const { name, email, password } = payload;
     const checkUser = await app_1.prisma.user.findUnique({
@@ -31,6 +32,7 @@ const registerService = async (payload) => {
     return newUser;
 };
 exports.registerService = registerService;
+//login service
 const loginService = async (payload) => {
     const { email, password } = payload;
     const user = await app_1.prisma.user.findUnique({

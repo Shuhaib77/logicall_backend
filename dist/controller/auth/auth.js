@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.login = exports.register = void 0;
 const authService_1 = require("../../services/auth/authService");
+//register
 const register = async (req, res) => {
     const { name, email, password } = req.body;
     if (!name || !email || !password) {
@@ -18,6 +19,7 @@ const register = async (req, res) => {
         .json({ message: `${name} your registration is successfull`, user: data });
 };
 exports.register = register;
+//login
 const login = async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
